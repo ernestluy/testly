@@ -30,6 +30,8 @@
 @property (nonatomic, weak) IBOutlet UIButton *recBtn;
 @property (nonatomic, weak) IBOutlet UILabel *statusLabel;
 @property (nonatomic, weak) IBOutlet UIActivityIndicatorView *ac;
+@property (nonatomic, weak) IBOutlet UIActivityIndicatorView *captureAc;
+@property (nonatomic, weak) IBOutlet UIButton *btnStop;
 @end
 
 @implementation PhotoHomeViewController
@@ -46,17 +48,27 @@
     self.captureManager = [[AVCaptureManager alloc] initWithPreviewView:preView];
     self.captureManager.delegate = self;
     self.ac.hidden = YES;
+    self.captureAc.hidden = YES;
+    
     
     self.barView.backgroundColor = _rgb2uic(0x595959, 0.6);
     self.statusView.backgroundColor = _rgb2uic(0x595959, 0.6);
     
     self.statusLabel.textColor = [UIColor whiteColor];
+    self.statusLabel.numberOfLines = 2;
+    self.statusLabel.lineBreakMode = NSLineBreakByWordWrapping;
     
     [self.recBtn setTintColor:[UIColor colorWithRed:245./255.
                                               green:51./255.
                                                blue:51./255.
                                               alpha:1.0]];
     [BLEPeripheralManager sharedInstance].delegate = self;
+    
+    
+    self.btnStop.layer.borderWidth = 1;
+    self.btnStop.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.btnStop.layer.cornerRadius = 2;
+    self.btnStop.hidden = YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -65,6 +77,8 @@
 }
 
 -(IBAction)imageCapture:(id)sender{
+    self.captureAc.hidden = NO;
+    [self.captureAc startAnimating];
     [self.captureManager Captureimage];
 }
 -(IBAction)homeSetting:(id)sender{
@@ -72,6 +86,15 @@
     as.tag = TAG_FIRST_LEVEL;
     UIWindow *w =   ((AppDelegate *)[UIApplication sharedApplication].delegate).window;
     [as showInView:w];
+}
+-(IBAction)stopPer:(id)sender{
+    NSLog(@"stopPer");
+    self.btnStop.hidden = YES;
+    [[BLEPeripheralManager sharedInstance] teardownServer];
+    self.statusLabel.text = @"终止被控制";
+    self.ac.hidden = YES;
+    [self.ac stopAnimating];
+    [Single sharedInstance].deviceType = DeviceNormal;
 }
 #pragma mark - UIActionSheetDelegate
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
@@ -85,6 +108,8 @@
             [Single sharedInstance].deviceType = DeviceShootPhoto;
             [[BLEPeripheralManager sharedInstance] startupServer];
             self.statusLabel.text = @"正在搜索控制器";
+            
+            self.btnStop.hidden = NO;
             self.ac.hidden = NO;
             [self.ac startAnimating];
         }
@@ -137,6 +162,9 @@
 }
 -(void)captureImageEnd:(UIImage*)timg{
     NSLog(@"captureImageEnd");
+    self.captureAc.hidden = YES;
+    [self.captureAc stopAnimating];
+    
     animImageView.frame = self.view.bounds;
     animImageView.image = timg;
     [self.view addSubview:animImageView];

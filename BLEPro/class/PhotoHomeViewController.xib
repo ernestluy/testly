@@ -8,6 +8,8 @@
             <connections>
                 <outlet property="ac" destination="Fa0-IS-ByQ" id="ziP-AF-ERV"/>
                 <outlet property="barView" destination="lzj-eF-KCS" id="KEq-fv-AW6"/>
+                <outlet property="btnStop" destination="yKd-JF-sub" id="dJW-8o-DB3"/>
+                <outlet property="captureAc" destination="PIi-f7-zOs" id="kRT-9B-why"/>
                 <outlet property="recBtn" destination="2r2-Va-dql" id="evi-hL-ig5"/>
                 <outlet property="statusLabel" destination="8Hs-e7-feK" id="5qM-fZ-HZ4"/>
                 <outlet property="statusView" destination="hGF-OL-8D0" id="6gC-Q7-k3f"/>
@@ -19,7 +21,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lzj-eF-KCS">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lzj-eF-KCS">
                     <rect key="frame" x="0.0" y="478" width="320" height="90"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ble_outer1" translatesAutoresizingMaskIntoConstraints="NO" id="wzc-v3-zEy">
@@ -53,21 +55,35 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="42"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Hs-e7-feK">
-                            <rect key="frame" x="20" y="0.0" width="249" height="42"/>
+                            <rect key="frame" x="36" y="0.0" width="233" height="42"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="Fa0-IS-ByQ">
-                            <rect key="frame" x="290" y="11" width="20" height="20"/>
+                            <rect key="frame" x="3" y="11" width="20" height="20"/>
                         </activityIndicatorView>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yKd-JF-sub">
+                            <rect key="frame" x="260" y="5" width="52" height="32"/>
+                            <state key="normal" title="停止">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="stopPer:" destination="-1" eventType="touchUpInside" id="ZaT-LN-iXC"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="PIi-f7-zOs">
+                    <rect key="frame" x="150" y="213" width="20" height="20"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="lzj-eF-KCS" secondAttribute="bottom" id="Rnf-E9-UGm"/>
+                <constraint firstItem="lzj-eF-KCS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="86g-yd-ohe"/>
+                <constraint firstAttribute="bottom" secondItem="lzj-eF-KCS" secondAttribute="bottom" id="Mlu-Zt-e7D"/>
+                <constraint firstAttribute="trailing" secondItem="lzj-eF-KCS" secondAttribute="trailing" id="Yrc-j1-Snl"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

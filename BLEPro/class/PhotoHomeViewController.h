@@ -14,4 +14,5 @@
 
 -(IBAction)imageCapture:(id)sender;
 -(IBAction)homeSetting:(id)sender;
+-(IBAction)stopPer:(id)sender;
 @end

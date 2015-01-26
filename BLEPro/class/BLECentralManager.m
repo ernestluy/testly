@@ -342,7 +342,7 @@ static BLECentralManager *bleInstance = nil;
 -(void)sendData:(NSDictionary *)dic{
     NSLog(@"sendData");//CBCharacteristicWriteWithResponse
     if (!isConnect) {
-        NSLog(@"disconnect");
+        NSLog(@"is disconnect");
         return;
     }
     if (_writeCharacteristic == nil) {

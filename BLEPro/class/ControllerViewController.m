@@ -53,6 +53,7 @@
 
 #pragma mark - BLECentralManagerDeleate
 -(void)connectSuccess:(BLECentralManager*)bm{
-    
+    [self.ac stopAnimating];
+    self.ac.hidden = YES;
 }
 @end
