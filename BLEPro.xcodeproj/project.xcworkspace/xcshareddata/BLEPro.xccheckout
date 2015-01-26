@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>7167A7D1-F25F-4D75-B19C-1E1CDFA8E9C5</string>
+	<key>IDESourceControlProjectName</key>
+	<string>BLEPro</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>9BE73AAD499352DCF25B731ED42E3149C66A6F14</key>
+		<string>/Users/zzt/Documents/61/workspace/ly/testPro/mine.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>BLEPro.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>9BE73AAD499352DCF25B731ED42E3149C66A6F14</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>/Users/zzt/Documents/61/workspace/ly/testPro/mine.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>9BE73AAD499352DCF25B731ED42E3149C66A6F14</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>9BE73AAD499352DCF25B731ED42E3149C66A6F14</string>
+			<key>IDESourceControlWCCName</key>
+			<string>mine</string>
+		</dict>
+	</array>
+</dict>
+</plist>
