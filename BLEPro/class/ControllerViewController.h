@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "BLECentralManager.h"
 #import "PublicDefine.h"
-@interface ControllerViewController : UIViewController<BLECentralManagerDeleate>
+@interface ControllerViewController : UIViewController<BLECentralManagerDeleate,UITextViewDelegate>
 {
     
 }
