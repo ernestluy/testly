@@ -12,20 +12,24 @@
 	<dict>
 		<key>9BE73AAD499352DCF25B731ED42E3149C66A6F14</key>
 		<string>/Users/zzt/Documents/61/workspace/ly/testPro/mine.git</string>
+		<key>E05259A9698C3C055E16AA2760EF0E671A853134</key>
+		<string>github.com:ernestluy/testly.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>BLEPro.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>9BE73AAD499352DCF25B731ED42E3149C66A6F14</key>
+		<string>../../../mine</string>
+		<key>E05259A9698C3C055E16AA2760EF0E671A853134</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>/Users/zzt/Documents/61/workspace/ly/testPro/mine.git</string>
+	<string>github.com:ernestluy/testly.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>9BE73AAD499352DCF25B731ED42E3149C66A6F14</string>
+	<string>E05259A9698C3C055E16AA2760EF0E671A853134</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -35,6 +39,14 @@
 			<string>9BE73AAD499352DCF25B731ED42E3149C66A6F14</string>
 			<key>IDESourceControlWCCName</key>
 			<string>mine</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E05259A9698C3C055E16AA2760EF0E671A853134</string>
+			<key>IDESourceControlWCCName</key>
+			<string>testly</string>
 		</dict>
 	</array>
 </dict>

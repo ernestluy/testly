@@ -9,8 +9,10 @@
 #import "ControllerViewController.h"
 #import "PublicDefine.h"
 #import "Single.h"
-@interface ControllerViewController ()
-
+@interface ControllerViewController (){
+    
+}
+@property (nonatomic, weak) IBOutlet UIActivityIndicatorView *ac;
 @end
 
 @implementation ControllerViewController
@@ -18,6 +20,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self.ac startAnimating];
+    self.ac.hidden = NO;
 }
 
 - (void)didReceiveMemoryWarning {
