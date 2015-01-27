@@ -86,7 +86,7 @@
     [self startAction:nil]; 
 }
 -(IBAction)back:(id)sender{
-    [self disconnect:nil];
+    [self btnDisconnect:nil];
     [Single sharedInstance].deviceType = DeviceNormal;
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
@@ -95,10 +95,10 @@
     [BLECentralManager sharedInstance].delegate = self;
     [[BLECentralManager sharedInstance] beginScan];
 }
--(IBAction)disconnect:(id)sender{
-    [self updateTextViewOffset:@"哈哈"];
-//    [BLECentralManager sharedInstance].isActive = NO;
-//    [[BLECentralManager sharedInstance] disConnect];
+-(IBAction)btnDisconnect:(id)sender{
+//    [self updateTextViewOffset:@"哈哈"];
+    [BLECentralManager sharedInstance].isActive = NO;
+    [[BLECentralManager sharedInstance] disConnect];
 }
 -(IBAction)shootAction:(id)sender{
     NSLog(@"shootAction");
@@ -159,6 +159,13 @@
     [self.ac stopAnimating];
     self.ac.hidden = YES;
     self.btnShoot.enabled = YES;
+}
+-(void)disconnect:(BLECentralManager*)bm{
+    [self updateTextViewOffset:@"和拍照设备连接断开，失去控制"];
+    [self updateTextViewOffset:@"重新扫描搜索拍照设备"];
+    [self.ac startAnimating];
+    self.ac.hidden = NO;
+    self.btnShoot.enabled = NO;
 }
 -(void)updataCentrelStatus:(NSString *)str{
     if (!str) {
