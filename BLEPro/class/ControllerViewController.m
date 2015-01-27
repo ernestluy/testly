@@ -162,7 +162,7 @@
 }
 -(void)disconnect:(BLECentralManager*)bm{
     [self updateTextViewOffset:@"和拍照设备连接断开，失去控制"];
-    [self updateTextViewOffset:@"重新扫描搜索拍照设备"];
+    [self updateTextViewOffset:@"重新搜索拍照设备"];
     [self.ac startAnimating];
     self.ac.hidden = NO;
     self.btnShoot.enabled = NO;
