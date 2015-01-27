@@ -74,6 +74,10 @@
     return jsonString;
 }
 +(NSString *)replaceDoubleSymbleToSignle:(NSString *)str{
+    if (str && str.length >30) {
+        NSRange range = NSMakeRange(0, 39);
+        str = [str substringWithRange:range];
+    }
     str = [str stringByReplacingOccurrencesOfString:@"\"" withString:@"'"];
     str = [str stringByReplacingOccurrencesOfString:@"“" withString:@"'"];
     str = [str stringByReplacingOccurrencesOfString:@"”" withString:@"'"];

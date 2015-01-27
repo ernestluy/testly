@@ -189,6 +189,9 @@ static BLECentralManager *bleInstance = nil;
 - (void)centralManager:(CBCentralManager *)central didFailToConnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error{
     NSLog(@"didFailToConnectPeripheral: %@", peripheral);
     [self setDisconnect];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(updataCentrelStatus:)]) {
+        [self.delegate updataCentrelStatus:@"连接失败，重新连接"];
+    }
     if (isActive) {
         [self beginScan];
     }
@@ -196,6 +199,9 @@ static BLECentralManager *bleInstance = nil;
 - (void)centralManager:(CBCentralManager *)central didDisconnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error{
     NSLog(@"didDisconnectPeripheral: %@", peripheral);
     [self setDisconnect];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(disconnect:)]) {
+        [self.delegate disconnect:self];
+    }
     if (isActive) {
         [self beginScan];
     }
@@ -308,6 +314,10 @@ static BLECentralManager *bleInstance = nil;
         }
         default:
             break;
+    }
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(updataStatusWithDic:)]) {
+        [self.delegate updataStatusWithDic:tDic];
     }
     
 }

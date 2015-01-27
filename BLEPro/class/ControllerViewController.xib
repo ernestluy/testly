@@ -7,6 +7,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ControllerViewController">
             <connections>
                 <outlet property="ac" destination="ybq-15-pRp" id="qED-FC-XGE"/>
+                <outlet property="btnShoot" destination="C0g-4r-qP8" id="tfu-cs-MWP"/>
+                <outlet property="textView" destination="W9n-kb-kOu" id="Kgg-Yc-SJV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,7 +18,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gG1-3L-frS">
-                    <rect key="frame" x="82" y="118" width="148" height="30"/>
+                    <rect key="frame" x="56" y="417" width="148" height="30"/>
                     <state key="normal" title="start">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -25,17 +27,14 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gku-Ya-EvL">
-                    <rect key="frame" x="113" y="197" width="87" height="30"/>
+                    <rect key="frame" x="8" y="399" width="87" height="30"/>
                     <state key="normal" title="disconnect">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
-                    <connections>
-                        <action selector="disconnect:" destination="-1" eventType="touchUpInside" id="raF-YA-xH6"/>
-                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C0g-4r-qP8">
-                    <rect key="frame" x="137" y="252" width="39" height="30"/>
-                    <state key="normal" title="shoot">
+                    <rect key="frame" x="30" y="333" width="260" height="51"/>
+                    <state key="normal" title="拍照">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -52,8 +51,14 @@
                     </connections>
                 </button>
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ybq-15-pRp">
-                    <rect key="frame" x="237" y="47" width="20" height="20"/>
+                    <rect key="frame" x="150" y="62" width="20" height="20"/>
                 </activityIndicatorView>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W9n-kb-kOu">
+                    <rect key="frame" x="10" y="100" width="300" height="200"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
