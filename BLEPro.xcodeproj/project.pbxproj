@@ -20,6 +20,7 @@
 		76B96C191A761E7A00D08E28 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 76B96C101A761E7A00D08E28 /* SBJsonWriter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		76B96C1D1A76211F00D08E28 /* JsonUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 76B96C1C1A76211F00D08E28 /* JsonUtil.m */; };
 		76B96C1E1A76211F00D08E28 /* JsonUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 76B96C1C1A76211F00D08E28 /* JsonUtil.m */; };
+		76B96C231A77326E00D08E28 /* shootVoice.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 76B96C221A77326E00D08E28 /* shootVoice.mp3 */; };
 		76D4A35D1A722AE8004B2345 /* AVCaptureManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D4A35C1A722AE8004B2345 /* AVCaptureManager.m */; };
 		76D4A35E1A722AE8004B2345 /* AVCaptureManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D4A35C1A722AE8004B2345 /* AVCaptureManager.m */; };
 		76D4A3621A722B76004B2345 /* PhotoHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D4A3601A722B76004B2345 /* PhotoHomeViewController.m */; };
@@ -78,6 +79,7 @@
 		76B96C101A761E7A00D08E28 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		76B96C1B1A76211F00D08E28 /* JsonUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonUtil.h; sourceTree = "<group>"; };
 		76B96C1C1A76211F00D08E28 /* JsonUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonUtil.m; sourceTree = "<group>"; };
+		76B96C221A77326E00D08E28 /* shootVoice.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = shootVoice.mp3; sourceTree = "<group>"; };
 		76D4A35B1A722AE8004B2345 /* AVCaptureManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVCaptureManager.h; sourceTree = "<group>"; };
 		76D4A35C1A722AE8004B2345 /* AVCaptureManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVCaptureManager.m; sourceTree = "<group>"; };
 		76D4A35F1A722B76004B2345 /* PhotoHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoHomeViewController.h; sourceTree = "<group>"; };
@@ -166,6 +168,14 @@
 			path = JSON;
 			sourceTree = "<group>";
 		};
+		76B96C211A77326E00D08E28 /* res */ = {
+			isa = PBXGroup;
+			children = (
+				76B96C221A77326E00D08E28 /* shootVoice.mp3 */,
+			);
+			path = res;
+			sourceTree = "<group>";
+		};
 		76D4A35A1A722AE8004B2345 /* AVCaptureManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +219,7 @@
 		ED0CC0AB19AE1C0600EF4003 /* BLEPro */ = {
 			isa = PBXGroup;
 			children = (
+				76B96C211A77326E00D08E28 /* res */,
 				ED0CC0D419AE1C4700EF4003 /* class */,
 				ED0CC0B419AE1C0600EF4003 /* AppDelegate.h */,
 				ED0CC0B519AE1C0600EF4003 /* AppDelegate.m */,
@@ -354,6 +365,7 @@
 				ED0CC0B019AE1C0600EF4003 /* InfoPlist.strings in Resources */,
 				ED0CC0DE19AE1DBD00EF4003 /* BLEViewController.xib in Resources */,
 				76D4A3641A722B76004B2345 /* PhotoHomeViewController.xib in Resources */,
+				76B96C231A77326E00D08E28 /* shootVoice.mp3 in Resources */,
 				76496B401A70D1FF005C5CAA /* ServiceViewController.xib in Resources */,
 				ED0CC0B819AE1C0600EF4003 /* Images.xcassets in Resources */,
 			);

@@ -15,6 +15,7 @@
 @property (nonatomic, weak) IBOutlet UIActivityIndicatorView *ac;
 @property (nonatomic, weak) IBOutlet UITextView *textView;
 @property (nonatomic, weak) IBOutlet UIButton *btnShoot;
+@property (nonatomic, weak) IBOutlet UIButton *btnBack;
 @end
 
 @implementation ControllerViewController
@@ -28,11 +29,11 @@
     
 
     
-//    [self.btnShoot setTitleColor:_rgb2uic(0x555555, 1) forState:UIControlStateNormal];
-//    [self.btnShoot setBackgroundColor:[UIColor whiteColor]];
-//    self.btnShoot.layer.borderWidth = 1;
-//    self.btnShoot.layer.borderColor = _rgb2uic(0xd7d7d7, 1).CGColor;
-//    self.btnShoot.layer.cornerRadius = 4;
+    [self.btnBack setTitleColor:_rgb2uic(0x555555, 1) forState:UIControlStateNormal];
+    [self.btnBack setBackgroundColor:[UIColor whiteColor]];
+    self.btnBack.layer.borderWidth = 1;
+    self.btnBack.layer.borderColor = _rgb2uic(0xd7d7d7, 1).CGColor;
+    self.btnBack.layer.cornerRadius = 4;
     
     [self.btnShoot setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.btnShoot setBackgroundColor:_rgb2uic(0x1bbbfe, 1)];
@@ -103,6 +104,7 @@
     NSLog(@"shootAction");
     [[BLECentralManager sharedInstance] sendData:@{@"code":CNUMBER(Cus_Ctl_Shoot)}];
     [self updateTextViewOffset:@"  拍照成功"];
+    [[Single sharedInstance] playShootVoice];
 }
 
 

@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BLEPro/class/ControllerViewController.m"
-            timestampString = "444017098.966772"
+            timestampString = "444019935.38632"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
             landmarkName = "-updateTextViewOffset:"
             landmarkType = "5">
          </BreakpointContent>

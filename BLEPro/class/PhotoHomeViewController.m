@@ -143,7 +143,8 @@
         int ttag = [[dic objectForKey:@"code"] intValue];
         switch (ttag) {
             case Cus_Ctl_Shoot:{
-                [self.captureManager Captureimage];
+//                [self.captureManager Captureimage];
+                [self imageCapture:nil];
                 break;
             }
             case Cus_Normal_Msg:{

@@ -15,6 +15,6 @@
 @property (nonatomic)DeviceType deviceType;
 @property (nonatomic,copy)NSString *token;
 +(Single*)sharedInstance;
-
+-(void)playShootVoice;
 -(NSString *)generatToken;
 @end
