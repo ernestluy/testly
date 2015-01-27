@@ -11,6 +11,8 @@
 @class BLECentralManager;
 @protocol BLECentralManagerDeleate <NSObject>
 -(void)connectSuccess:(BLECentralManager*)bm;
+-(void)updataCentrelStatus:(NSString *)str;
+-(void)updataStatusWithDic:(NSDictionary *)dic;
 @end
 
 

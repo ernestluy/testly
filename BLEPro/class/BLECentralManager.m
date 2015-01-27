@@ -310,6 +310,10 @@ static BLECentralManager *bleInstance = nil;
             break;
     }
     
+    if (self.delegate && [self.delegate respondsToSelector:@selector(updataStatusWithDic:)]) {
+        [self.delegate updataStatusWithDic:tDic];
+    }
+    
 }
 
 //在7.0系统下，先执行该代理方法，然后执行 didDisconnectPeripheral方法
