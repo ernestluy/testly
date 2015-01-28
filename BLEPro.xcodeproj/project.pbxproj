@@ -21,6 +21,12 @@
 		76B96C1D1A76211F00D08E28 /* JsonUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 76B96C1C1A76211F00D08E28 /* JsonUtil.m */; };
 		76B96C1E1A76211F00D08E28 /* JsonUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 76B96C1C1A76211F00D08E28 /* JsonUtil.m */; };
 		76B96C231A77326E00D08E28 /* shootVoice.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 76B96C221A77326E00D08E28 /* shootVoice.mp3 */; };
+		76B96C3C1A78BA4D00D08E28 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76B96C361A78BA4D00D08E28 /* Default-568h@2x.png */; };
+		76B96C3D1A78BA4D00D08E28 /* icon-29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76B96C371A78BA4D00D08E28 /* icon-29@2x.png */; };
+		76B96C3E1A78BA4D00D08E28 /* icon-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76B96C381A78BA4D00D08E28 /* icon-40@2x.png */; };
+		76B96C3F1A78BA4D00D08E28 /* icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76B96C391A78BA4D00D08E28 /* icon-60@2x.png */; };
+		76B96C401A78BA4D00D08E28 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 76B96C3A1A78BA4D00D08E28 /* icon.png */; };
+		76B96C411A78BA4D00D08E28 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76B96C3B1A78BA4D00D08E28 /* icon@2x.png */; };
 		76D4A35D1A722AE8004B2345 /* AVCaptureManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D4A35C1A722AE8004B2345 /* AVCaptureManager.m */; };
 		76D4A35E1A722AE8004B2345 /* AVCaptureManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D4A35C1A722AE8004B2345 /* AVCaptureManager.m */; };
 		76D4A3621A722B76004B2345 /* PhotoHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D4A3601A722B76004B2345 /* PhotoHomeViewController.m */; };
@@ -80,6 +86,12 @@
 		76B96C1B1A76211F00D08E28 /* JsonUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonUtil.h; sourceTree = "<group>"; };
 		76B96C1C1A76211F00D08E28 /* JsonUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonUtil.m; sourceTree = "<group>"; };
 		76B96C221A77326E00D08E28 /* shootVoice.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = shootVoice.mp3; sourceTree = "<group>"; };
+		76B96C361A78BA4D00D08E28 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		76B96C371A78BA4D00D08E28 /* icon-29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-29@2x.png"; sourceTree = "<group>"; };
+		76B96C381A78BA4D00D08E28 /* icon-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-40@2x.png"; sourceTree = "<group>"; };
+		76B96C391A78BA4D00D08E28 /* icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-60@2x.png"; sourceTree = "<group>"; };
+		76B96C3A1A78BA4D00D08E28 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		76B96C3B1A78BA4D00D08E28 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		76D4A35B1A722AE8004B2345 /* AVCaptureManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVCaptureManager.h; sourceTree = "<group>"; };
 		76D4A35C1A722AE8004B2345 /* AVCaptureManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVCaptureManager.m; sourceTree = "<group>"; };
 		76D4A35F1A722B76004B2345 /* PhotoHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoHomeViewController.h; sourceTree = "<group>"; };
@@ -88,7 +100,7 @@
 		76D4A3711A724B61004B2345 /* ControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControllerViewController.h; sourceTree = "<group>"; };
 		76D4A3721A724B61004B2345 /* ControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControllerViewController.m; sourceTree = "<group>"; };
 		76D4A3731A724B61004B2345 /* ControllerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ControllerViewController.xib; sourceTree = "<group>"; };
-		ED0CC0A219AE1C0600EF4003 /* BLEPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BLEPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED0CC0A219AE1C0600EF4003 /* 遥控拍照.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "遥控拍照.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED0CC0A519AE1C0600EF4003 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		ED0CC0A719AE1C0600EF4003 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		ED0CC0A919AE1C0600EF4003 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -171,9 +183,23 @@
 		76B96C211A77326E00D08E28 /* res */ = {
 			isa = PBXGroup;
 			children = (
+				76B96C351A78BA4D00D08E28 /* icon */,
 				76B96C221A77326E00D08E28 /* shootVoice.mp3 */,
 			);
 			path = res;
+			sourceTree = "<group>";
+		};
+		76B96C351A78BA4D00D08E28 /* icon */ = {
+			isa = PBXGroup;
+			children = (
+				76B96C361A78BA4D00D08E28 /* Default-568h@2x.png */,
+				76B96C371A78BA4D00D08E28 /* icon-29@2x.png */,
+				76B96C381A78BA4D00D08E28 /* icon-40@2x.png */,
+				76B96C391A78BA4D00D08E28 /* icon-60@2x.png */,
+				76B96C3A1A78BA4D00D08E28 /* icon.png */,
+				76B96C3B1A78BA4D00D08E28 /* icon@2x.png */,
+			);
+			path = icon;
 			sourceTree = "<group>";
 		};
 		76D4A35A1A722AE8004B2345 /* AVCaptureManager */ = {
@@ -198,7 +224,7 @@
 		ED0CC0A319AE1C0600EF4003 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				ED0CC0A219AE1C0600EF4003 /* BLEPro.app */,
+				ED0CC0A219AE1C0600EF4003 /* 遥控拍照.app */,
 				ED0CC0BD19AE1C0600EF4003 /* BLEProTests.xctest */,
 			);
 			name = Products;
@@ -303,7 +329,7 @@
 			);
 			name = BLEPro;
 			productName = BLEPro;
-			productReference = ED0CC0A219AE1C0600EF4003 /* BLEPro.app */;
+			productReference = ED0CC0A219AE1C0600EF4003 /* 遥控拍照.app */;
 			productType = "com.apple.product-type.application";
 		};
 		ED0CC0BC19AE1C0600EF4003 /* BLEProTests */ = {
@@ -361,13 +387,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76B96C3D1A78BA4D00D08E28 /* icon-29@2x.png in Resources */,
+				76B96C3F1A78BA4D00D08E28 /* icon-60@2x.png in Resources */,
+				76B96C411A78BA4D00D08E28 /* icon@2x.png in Resources */,
 				76D4A3761A724B61004B2345 /* ControllerViewController.xib in Resources */,
 				ED0CC0B019AE1C0600EF4003 /* InfoPlist.strings in Resources */,
 				ED0CC0DE19AE1DBD00EF4003 /* BLEViewController.xib in Resources */,
 				76D4A3641A722B76004B2345 /* PhotoHomeViewController.xib in Resources */,
 				76B96C231A77326E00D08E28 /* shootVoice.mp3 in Resources */,
+				76B96C3C1A78BA4D00D08E28 /* Default-568h@2x.png in Resources */,
+				76B96C401A78BA4D00D08E28 /* icon.png in Resources */,
 				76496B401A70D1FF005C5CAA /* ServiceViewController.xib in Resources */,
 				ED0CC0B819AE1C0600EF4003 /* Images.xcassets in Resources */,
+				76B96C3E1A78BA4D00D08E28 /* icon-40@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,7 +540,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: yi lu (FT5GU86TL3)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -529,14 +561,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: yi lu (QTA63L2J97)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: yi lu (QTA63L2J97)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: yi lu (FT5GU86TL3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: yi lu (FT5GU86TL3)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BLEPro/BLEPro-Prefix.pch";
 				INFOPLIST_FILE = "BLEPro/BLEPro-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "860228a7-517f-4bed-9b75-29d49a38720c";
+				PRODUCT_NAME = "遥控拍照";
+				PROVISIONING_PROFILE = "d5b4a1da-81a4-4318-9db9-df98922f40f0";
 				SDKROOT = iphoneos6.0;
 				WRAPPER_EXTENSION = app;
 			};
@@ -547,12 +579,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: yi lu (FT5GU86TL3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: yi lu (FT5GU86TL3)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BLEPro/BLEPro-Prefix.pch";
 				INFOPLIST_FILE = "BLEPro/BLEPro-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "860228a7-517f-4bed-9b75-29d49a38720c";
+				PRODUCT_NAME = "遥控拍照";
+				PROVISIONING_PROFILE = "d5b4a1da-81a4-4318-9db9-df98922f40f0";
 				SDKROOT = iphoneos6.0;
 				WRAPPER_EXTENSION = app;
 			};

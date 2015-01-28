@@ -57,10 +57,6 @@
         self.textView = tv;
 //        self.textView.hidden = YES;
         [self.view addSubview:self.textView];
-        // if using ARC, remove these 3 lines
-        //        [textContainer release];
-        //        [layoutManager release];
-        //        [textStorage release];
     }
 
     self.textView.text = @"正在搜索可受控制的拍照设备";

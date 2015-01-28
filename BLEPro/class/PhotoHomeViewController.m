@@ -69,8 +69,16 @@
     self.btnStop.layer.borderColor = [UIColor whiteColor].CGColor;
     self.btnStop.layer.cornerRadius = 2;
     self.btnStop.hidden = YES;
-}
+    
 
+    UIButton *tBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    tBtn.frame = rbImageView.frame;
+    [self.view addSubview:tBtn];
+    [tBtn addTarget:self action:@selector(tapped:) forControlEvents:UIControlEventTouchUpInside];
+}
+-(void)tapped:(id)sender{
+    [[[UIAlertView alloc] initWithTitle:nil message:@"照片已经保存到系统照片中" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil]show];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -102,6 +110,10 @@
     if (actionSheet.tag == TAG_FIRST_LEVEL) {
         NSLog(@"TAG_FIRST_LEVEL");
         if (0 == buttonIndex) {
+            
+            if ([Single sharedInstance].deviceType == DeviceShootPhoto) {
+                [self stopPer:nil];
+            }
             [Single sharedInstance].deviceType = DeviceConroller;
             [self.navigationController pushViewController:[[ControllerViewController alloc]init] animated:YES];
         }else if (1 == buttonIndex){

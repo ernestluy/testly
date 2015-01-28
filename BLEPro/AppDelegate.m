@@ -24,6 +24,7 @@
     [self.window makeKeyAndVisible];
     [UIApplication sharedApplication].statusBarHidden = YES;
     //[Single sharedInstance];
+    [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
     return YES;
 }
 

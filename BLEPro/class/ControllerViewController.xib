@@ -7,6 +7,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ControllerViewController">
             <connections>
                 <outlet property="ac" destination="ybq-15-pRp" id="qED-FC-XGE"/>
+                <outlet property="btnBack" destination="OKM-iX-yEj" id="94l-Kw-sRK"/>
                 <outlet property="btnShoot" destination="C0g-4r-qP8" id="tfu-cs-MWP"/>
                 <outlet property="textView" destination="W9n-kb-kOu" id="Kgg-Yc-SJV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -43,7 +44,7 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OKM-iX-yEj">
                     <rect key="frame" x="20" y="27" width="61" height="30"/>
-                    <state key="normal" title="back">
+                    <state key="normal" title="返回">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -54,6 +55,7 @@
                     <rect key="frame" x="150" y="62" width="20" height="20"/>
                 </activityIndicatorView>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W9n-kb-kOu">
+                    <rect key="frame" x="10" y="100" width="300" height="200"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
