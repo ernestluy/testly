@@ -168,7 +168,7 @@ static BLECentralManager *bleInstance = nil;
     return YES;
 }
 
-
+#pragma mark -连接成功   ，发送请求控制的消息
 //当连接成功后，系统会通过回调函数告诉我们，然后我们就在这个回调里去扫描设备下所有的服务和特征
 - (void)centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral
 {
@@ -185,7 +185,7 @@ static BLECentralManager *bleInstance = nil;
     }
     
 }
-
+#pragma mark -连接失败
 - (void)centralManager:(CBCentralManager *)central didFailToConnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error{
     NSLog(@"didFailToConnectPeripheral: %@", peripheral);
     [self setDisconnect];
@@ -196,6 +196,7 @@ static BLECentralManager *bleInstance = nil;
         [self beginScan];
     }
 }
+#pragma mark -连接断开
 - (void)centralManager:(CBCentralManager *)central didDisconnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error{
     NSLog(@"didDisconnectPeripheral: %@", peripheral);
     [self setDisconnect];
@@ -268,6 +269,7 @@ static BLECentralManager *bleInstance = nil;
 }
 
 //发送成功调用
+#pragma mark -发送成功调用
 - (void)peripheral:(CBPeripheral *)peripheral didWriteValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error
 {
     NSLog(@"发送数据回调");
@@ -280,6 +282,7 @@ static BLECentralManager *bleInstance = nil;
 }
 
 //接收数据
+#pragma mark - 接收数据
 - (void)peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error
 {
     NSLog(@"接收数据");
@@ -349,6 +352,7 @@ static BLECentralManager *bleInstance = nil;
     }
     [_testPeripheral writeValue:data forCharacteristic:_writeCharacteristic type:CBCharacteristicWriteWithResponse];
 }
+#pragma mark -发送数据
 -(void)sendData:(NSDictionary *)dic{
     NSLog(@"sendData");//CBCharacteristicWriteWithResponse
     if (!isConnect) {

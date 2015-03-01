@@ -9,6 +9,7 @@
 #import "ControllerViewController.h"
 #import "PublicDefine.h"
 #import "Single.h"
+#import "JsonUtil.h"
 @interface ControllerViewController (){
     
 }
@@ -151,11 +152,19 @@
 
 #pragma mark - BLECentralManagerDeleate
 -(void)connectSuccess:(BLECentralManager*)bm{
-    [self updateTextViewOffset:@"已经成功连接到可拍照设备，可以开始拍照"];
+//    [self updateTextViewOffset:@"已经成功连接到可拍照设备，可以开始拍照"];
+    [self updateTextViewOffset:@"正在申请控制可拍照设备，请等待..."];
+    [[BLECentralManager sharedInstance] sendData:@{@"code":CNUMBER(Cus_Apply),@"msg":[NSString stringWithFormat:@"设备 %@ 申请控制",[JsonUtil replaceDoubleSymbleToSignle:[UIDevice currentDevice].name]]}];
+    
     [self.ac stopAnimating];
     self.ac.hidden = YES;
+//    self.btnShoot.enabled = YES;
+}
+-(void)applySuccess:(BLECentralManager*)bm{
+    [self updateTextViewOffset:@"已经成功获取可拍照设备控制权，可以开始拍照"];
     self.btnShoot.enabled = YES;
 }
+
 -(void)disconnect:(BLECentralManager*)bm{
     [self updateTextViewOffset:@"和拍照设备连接断开，失去控制"];
     [self updateTextViewOffset:@"重新搜索拍照设备"];

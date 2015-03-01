@@ -31,6 +31,7 @@ typedef enum {
 
 typedef enum {
     Cus_Success = 200,
+    Cus_Apply ,
     Cus_Error = 401,
     Cus_Shoot_Device_Be_Ctl = 402,
     

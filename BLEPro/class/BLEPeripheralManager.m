@@ -30,6 +30,13 @@
     
     
     CBCentral *centralCtl;
+    
+    CBCentral *centralApply;
+    NSMutableArray *centralApplyArr;
+    
+    BOOL isApplying;
+    
+    NSMutableDictionary *mTmpDic;
 }
 
 @end
@@ -51,6 +58,9 @@
         _subscribedCentrals = [NSMutableArray array];
         _peripheralManager = nil;
         centralCtl = nil;
+        centralApply = nil;
+        centralApplyArr = [NSMutableArray array];
+        mTmpDic = [NSMutableDictionary dictionary];
     }
     return self;
 }
@@ -61,7 +71,7 @@
     NSLog(@"_peripheralManager.isAdvertising:%d",_peripheralManager.isAdvertising);
     [_subscribedCentrals removeAllObjects];
     
-    
+    isApplying = NO;
 }
 
 - (void) teardownServer {
@@ -75,6 +85,9 @@
     _characteristicRead = nil;
     _characteristicWrite = nil;
     centralCtl = nil;
+    centralApply = nil;
+    [centralApplyArr removeAllObjects];
+    isApplying = NO;
 }
 
 -(void)initService{
@@ -148,6 +161,7 @@
 }
 
 //收到中心设备发送过来的消息，并进行回复
+#pragma mark- 收到中心设备发送过来的消息
 - (void)peripheralManager:(CBPeripheralManager *)peripheral didReceiveWriteRequests:(NSArray *)requests{
     NSLog(@"didReceiveWriteRequests");
     if (requests.count >0) {
@@ -165,13 +179,73 @@
             [peripheral respondToRequest:req withResult:CBATTErrorSuccess];
             if ([Single sharedInstance].token && [dic objectForKey:@"token"]) {
                 if ([[Single sharedInstance].token isEqualToString:[dic objectForKey:@"token"]]) {
-                    if (self.delegate && [self.delegate respondsToSelector:@selector(receiveData:)]) {
-                        [self.delegate receiveData:dic];
-                    }
+                    [self delegateDealData:dic];
+                    //已经有控制器
+                    continue;
                 }
+            }
+            int tCode = [[dic objectForKey:@"code"] intValue];
+            if (Cus_Apply == tCode) {
+                if (isApplying) {//已经有控制器在申请控制，请等待
+                    [centralApplyArr addObject:req.central];
+                    NSString *ts =  [self getKeyWithCentral:req.central];
+                    [mTmpDic setObject:dic forKey:ts];
+                    continue;
+                }
+                isApplying = YES;
+                centralApply = req.central;
+                NSString *tMsg = [dic objectForKey:@"msg"];
+                UIAlertView *av =  [[UIAlertView alloc] initWithTitle:@"控制申请" message:tMsg delegate:self cancelButtonTitle:@"同意" otherButtonTitles:@"不同意", nil];
+                [av show];
             }
             
         }
+    }
+}
+
+-(NSString *)getKeyWithCentral:(CBCentral *)cc{
+    NSString *ts =  [cc.identifier description];
+    if (ts == nil) {
+        ts = @"fuck";
+    }
+    return ts;
+}
+#pragma  mark - 从队列中弹出一个控制器来申请
+-(void)popApplyCenral{
+    if (centralApplyArr.count == 0) {
+        return;
+    }
+    CBCentral *tc = [centralApplyArr objectAtIndex:0];
+    [centralApplyArr removeObject:tc];
+    centralApply = tc;
+    isApplying = YES;
+    NSDictionary *dic = [mTmpDic objectForKey:[self getKeyWithCentral:tc]];
+    NSString *tMsg = [dic objectForKey:@"msg"];
+    UIAlertView *av =  [[UIAlertView alloc] initWithTitle:@"控制申请" message:tMsg delegate:self cancelButtonTitle:@"同意" otherButtonTitles:@"不同意", nil];
+    [av show];
+}
+#pragma mark - UIAlertViewDelegate
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    isApplying = NO;
+    switch (buttonIndex) {
+        case 0:{
+            NSLog(@"0");
+            [self selectController:centralApply];
+            break;
+        }
+        case 1:{
+            
+            break;
+        }
+        default:
+            break;
+    }
+    [self popApplyCenral];
+}
+#pragma mark - 代理处理数据
+-(void)delegateDealData:(NSDictionary *)dic{
+    if (self.delegate && [self.delegate respondsToSelector:@selector(receiveData:)]) {
+        [self.delegate receiveData:dic];
     }
 }
 - (void)peripheralManager:(CBPeripheralManager *)peripheral didReceiveReadRequest:(CBATTRequest *)request{
@@ -182,16 +256,23 @@
 }
 
 //当有central设备连接进来并订阅相应地特征时，调用该方法
+#pragma mark- 当有central设备连接进来并订阅相应地特征时，调用该方法
 - (void) peripheralManager:(CBPeripheralManager *)peripheral central:(CBCentral *)central didSubscribeToCharacteristic:(CBCharacteristic *)characteristic {
+    [_subscribedCentrals addObject:central];
     if (centralCtl) {
         //只能让一个控制器进入控制
         [self adverData:@{@"code":CNUMBER(Cus_Shoot_Device_Be_Ctl),@"msg":@"拍摄设备已经处于控制状态，无法连接"}];
-        [_subscribedCentrals addObject:central];
         return;
     }
+    //处理 控制器申请控制拍照设备
     
-    centralCtl = central;
-    [_subscribedCentrals addObject:central];
+    
+}
+
+#pragma mark - 选择申请的控制器
+-(void)selectController:(CBCentral *)c{
+    centralCtl = c;
+    [_subscribedCentrals addObject:c];
     isConnect = YES;
     [Single sharedInstance].token = [[Single sharedInstance] generatToken];
     NSLog(@"Publishing Characteristic to Central,size:%d",(int)_subscribedCentrals.count);
@@ -206,25 +287,28 @@
     [self stopAdvert];
 }
 
+#pragma mark- 更新界面提示消息
 -(void)updateViewStr:(NSString *)str{
     if (self.delegate && [self.delegate respondsToSelector:@selector(updateStatus:)]) {
         [self.delegate updateStatus:str];
     }
 }
 
+#pragma mark-
 -(void)sendDetailData{
     NSDictionary *msgDic = @{@"code":CNUMBER(Cus_Normal_Msg),@"msg":[NSString stringWithFormat:@"您控制的是%@的设备",[JsonUtil replaceDoubleSymbleToSignle:[UIDevice currentDevice].name]]};
     [self adverData:msgDic];
 }
 
 //当有central设备退订相应地特征时，调用该方法 （断开连接也会调用该方法）
+#pragma mark- 当有central设备退订相应地特征时，调用该方法 （断开连接也会调用该方法）
 - (void)peripheralManager:(CBPeripheralManager *)peripheral central:(CBCentral *)central didUnsubscribeFromCharacteristic:(CBCharacteristic *)characteristic{
     NSLog(@"didUnsubscribeFromCharacteristic");
-//    if ([[centralCtl.identifier UUIDString] isEqualToString:[central.identifier UUIDString]]) {
-//        centralCtl = nil;
-//    }
+
+    [centralApplyArr removeObject:central];
     if (central == centralCtl) {
         centralCtl = nil;
+        centralApply = nil;
         if (self.delegate && [self.delegate respondsToSelector:@selector(disconnect:)]) {
             [self.delegate disconnect:self];
         }
@@ -236,6 +320,7 @@
 
 
 //周边设备发送广播给中心设备
+#pragma mark- 代理方法 周边设备发送广播给中心设备
 - (void) updateCharactaristicValueWithDictionary:(NSDictionary*)JSONDictionary {
 //    NSData *data = [NSJSONSerialization dataWithJSONObject:JSONDictionary options:NSJSONWritingPrettyPrinted error:nil];
     NSData *data = [JsonUtil getDataWithDic:JSONDictionary];
@@ -249,6 +334,7 @@
     
 }
 //周边设备发送广播给中心设备
+#pragma mark- 周边设备发送广播给 已经确认的中心设备
 -(void)adverData:(NSDictionary*)JSONDictionary{
     NSData *data = [JsonUtil getDataWithDic:JSONDictionary];
     NSLog(@"蓝牙设备广播 信息");
@@ -258,7 +344,18 @@
                    onSubscribedCentrals:@[centralCtl]];
     }
 }
+#pragma mark- 周边设备发送广播给特定的中心设备
+-(void)adverDataToCentral:(CBCentral *)tc msg:(NSDictionary *)jDic{
+    NSData *data = [JsonUtil getDataWithDic:jDic];
+    NSLog(@"蓝牙设备广播 信息");
+    if (_peripheralManager) {
+        [_peripheralManager updateValue:data
+                      forCharacteristic:_characteristicRead
+                   onSubscribedCentrals:@[tc]];
+    }
+}
 
+#pragma mark- 周边设备发送广播给 所有的中心设备
 -(void)adverAllCentrl:(NSDictionary*)JSONDictionary{
 //    NSData *data = [NSJSONSerialization dataWithJSONObject:JSONDictionary  options:NSJSONWritingPrettyPrinted error:nil];
     NSData *data = [JsonUtil getDataWithDic:JSONDictionary];

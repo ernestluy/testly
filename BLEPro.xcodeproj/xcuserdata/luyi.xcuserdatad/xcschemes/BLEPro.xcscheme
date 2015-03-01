@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "ED0CC0A119AE1C0600EF4003"
-               BuildableName = "BLEPro.app"
+               BuildableName = "&#x9065;&#x63a7;&#x62cd;&#x7167;.app"
                BlueprintName = "BLEPro"
                ReferencedContainer = "container:BLEPro.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "ED0CC0A119AE1C0600EF4003"
-            BuildableName = "BLEPro.app"
+            BuildableName = "&#x9065;&#x63a7;&#x62cd;&#x7167;.app"
             BlueprintName = "BLEPro"
             ReferencedContainer = "container:BLEPro.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "ED0CC0A119AE1C0600EF4003"
-            BuildableName = "BLEPro.app"
+            BuildableName = "&#x9065;&#x63a7;&#x62cd;&#x7167;.app"
             BlueprintName = "BLEPro"
             ReferencedContainer = "container:BLEPro.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "ED0CC0A119AE1C0600EF4003"
-            BuildableName = "BLEPro.app"
+            BuildableName = "&#x9065;&#x63a7;&#x62cd;&#x7167;.app"
             BlueprintName = "BLEPro"
             ReferencedContainer = "container:BLEPro.xcodeproj">
          </BuildableReference>

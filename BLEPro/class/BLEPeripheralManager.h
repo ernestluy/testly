@@ -16,7 +16,7 @@
 -(void)updateStatus:(NSString *)str;
 @end
 
-@interface BLEPeripheralManager : NSObject<CBPeripheralManagerDelegate>
+@interface BLEPeripheralManager : NSObject<CBPeripheralManagerDelegate,UIAlertViewDelegate>
 {
     NSMutableArray *_subscribedCentrals;
     BOOL isConnect;
